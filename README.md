@@ -1,7 +1,12 @@
 # us_f.lag.py
 #
-# created by Midhunvsgit  https://instagram.com/___.v.s.____?utm_medium=copy_link
+# created by Midhunvsgit 
 # 
+#
+
+#
+# Python script to create USA flag using turtle.
+# Author - [PythonCircle](https://www.pythoncircle.com)
 #
 
 import turtle
@@ -12,14 +17,15 @@ screen = turtle.getscreen()
 # set background color of screen
 screen.bgcolor("white")
 # set tile of screen
-screen.title("USA Flag - https://instagram.com/___.v.s.____?utm_medium=copy_link ")
-
-
+screen.title("USA Flag - https://instagram.com/___.v.s.____?utm_medium=copy_link")
+# "Yesterday is history, tomorrow is a mystery, 
+# but today is a gift. That is why it is called the present.”
+# — Oogway to Po, under the peach tree, Kung Fu Panda Movie
 oogway = turtle.Turtle()
-
+# set the cursor/turtle speed. Higher value, faster is the turtle
 oogway.speed(100)
 oogway.penup()
-
+# decide the shape of cursor/turtle
 oogway.shape("turtle")
 
 # flag height to width ratio is 1:1.9
@@ -27,15 +33,15 @@ flag_height = 250
 flag_width = 475
 
 # starting points
-
+# start from the first quardant, half of flag width and half of flag height
 start_x = -237
 start_y = 125
 
-x
+# For red and white stripes (total 13 stripes in flag), each strip width will be flag_height/13 = 19.2 approx
 stripe_height = flag_height/13
 stripe_width = flag_width
 
-
+# length of one arm of star
 star_size = 10
 
 
@@ -70,7 +76,7 @@ def draw_star(x,y,color,length) :
     oogway.penup()
 
 
-
+# this function is used to create 13 red and white stripes of flag
 def draw_stripes():
     x = start_x
     y = start_y
@@ -87,6 +93,10 @@ def draw_stripes():
     y = y - stripe_height
 
 
+# this function create navy color square
+# height = 7/13 of flag_height
+# width = 0.76 * flag_height
+# check references section for these values
 def draw_square():
     square_height = (7/13) * flag_height
     square_width = (0.76) * flag_height
@@ -120,16 +130,17 @@ def draw_five_stars_rows():
             x = x + gap_between_stars
         y = y - gap_between_lines
 
-
+# start after 5 seconds.
 time.sleep(5)
-
+# draw 13 stripes
 draw_stripes()
-
+# draw squares to hold stars
 draw_square()
-
+# draw 30 stars, 6 * 5
 draw_six_stars_rows()
-
+# draw 20 stars, 5 * 4. total 50 stars representing 50 states of USA
 draw_five_stars_rows()
+# hide the cursor/turtle
 oogway.hideturtle()
-
+# keep holding the screen until closed manually
 screen.mainloop()
