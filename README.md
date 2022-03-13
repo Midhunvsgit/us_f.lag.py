@@ -2,13 +2,8 @@
 #us_f.lag.py
 #
 # created by Midhunvsgit 
-# 
 #
 
-#
-# Python script to create USA flag using turtle.
-# Author - [PythonCircle](https://www.pythoncircle.com)
-#
 
 import turtle
 import time
